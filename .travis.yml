@@ -1,23 +1,21 @@
 sudo: required
 language: generic
 services: docker
-
 script:
-  # We use the docker image from https://hub.docker.com/r/dxjoke/tectonic-docker/
-  # Compiling only main.tex:
-  # - docker run --mount src=$TRAVIS_BUILD_DIR/src,target=/usr/src/tex,type=bind dxjoke/tectonic-docker /bin/sh -c "tectonic main.tex"
-  # Compiling multiple files as well as using biber:
-  - docker run --mount src=$TRAVIS_BUILD_DIR/src,target=/usr/src/tex,type=bind dxjoke/tectonic-docker /bin/sh -c "tectonic --keep-intermediates --reruns 0 cv.tex; biber publications.bib; tectonic cv.tex; tectonic cv.tex"
-
+- docker run --mount src=$TRAVIS_BUILD_DIR/src,target=/usr/src/tex,type=bind dxjoke/tectonic-docker
+  /bin/sh -c "tectonic --keep-intermediates --reruns 0 cv.tex; biber publications.bib;
+  tectonic cv.tex; tectonic cv.tex"
 before_deploy:
-  # Set up git user name and tag this commit
-  - git config --local user.name "fmarotta"
-  - git config --local user.email "federicomarotta@mail.com"
-  - export TRAVIS_TAG=${TRAVIS_TAG:-$(date +'%Y%m%d%H%M%S')-$(git log --format=%h -1)}
-  - git tag $TRAVIS_TAG
-
+- git config --local user.name "fmarotta"
+- git config --local user.email "federicomarotta@mail.com"
+- export TRAVIS_TAG=${TRAVIS_TAG:-$(date +'%Y%m%d%H%M%S')-$(git log --format=%h -1)}
+- git tag $TRAVIS_TAG
 deploy:
   provider: releases
-  api_key: "1dcc2a60bf9f2a474df5ca81834c7d76f49f8719"
-  file: "src/cv.pdf"
-  skip_cleanup: true
+  api_key:
+    secure: xam7X1GDR3KfCXILO0M7kyRZ2LS7pKYnUzOM5cxQGogUNsgTuyWH6bWqpLSBYcO2YRiPeKtBfoawsRD0QRwExV+su7RgqycvCyGHEPkWXDK2wC1EI2cOCwT3GCzL/+p/+5a0wUeHwCmcNBrvWzTdx09j15c0K2a3YVLReo8J8oaMSOSHMbFMd83WMwroaLJI6bRno/tTUTDxdFdPyyxHN+rKZCqhun2UJK051QAKiphuUZJ6KhiN8Y+OJoVkkKIPMBroCPbsLMynz+2tvaz03SDlyxPrXUPwVrS0/DksDlk76jbYccRmNa+Y0sPDPY49FjjcNDB5P4I+onS6vHtqZHWb24kY3WV4AAD1vtthg1trYXcux0bH4gGUMrGvjeJT2EU/b67ryYLU+rOzCJMq8XrKRmT+z3dRoFElX/VcROZjhdUWgcnoPO5WPWM87Sc6UT3ERAO1aiFq5Cz06kAhRRvmKEukV2KVwCSlfQxR//dwT/kJl4g2hnHZLwYTfij3V/e3toUHwyo11DAKvz8WGh+SrAapjM4sV5FokuNjUXW7BPE+WbweqTO0BJI5GkvMeQ+bBJbcoaAD3lNCJBsy184QLqmNzx1jrGkq1g9NBrwUxoPFmRgrLjR2PwrbUK5QTcaZ4U6oY546y03hfXYSjRAn4pcnHuUy3q++HnSbD/I=
+  file: "./src/cv.pdf"
+  on:
+    repo: fmarotta/CV
+    branch: master
+  skip_cleanup: 'true'
