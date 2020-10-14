@@ -8,16 +8,3 @@ script:
   # - docker run --mount src=$TRAVIS_BUILD_DIR/src,target=/usr/src/tex,type=bind dxjoke/tectonic-docker /bin/sh -c "tectonic main.tex"
   # Compiling multiple files as well as using biber:
   - docker run --mount src=$TRAVIS_BUILD_DIR/src,target=/usr/src/tex,type=bind dxjoke/tectonic-docker /bin/sh -c "tectonic --keep-intermediates --reruns 0 cv.tex; biber publications.bib; tectonic cv.tex; tectonic cv.tex"
-
-before_deploy:
-  # Set up git user name and tag this commit
-  - git config --local user.name "fmarotta"
-  - git config --local user.email "federicomarotta@mail.com"
-  - export TRAVIS_TAG=${cv:-$(date +'%Y%m%d%H%M%S')-$(git log --format=%h -1)}
-  - git tag $TRAVIS_TAG
-
-deploy:
-  provider: releases
-  api_key: "1dcc2a60bf9f2a474df5ca81834c7d76f49f8719"
-  file: "src/cv.pdf"
-  skip_cleanup: true
