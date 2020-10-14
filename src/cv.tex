@@ -1,0 +1,172 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Wilson Resume/CV
+% XeLaTeX Template
+% Version 1.0 (22/1/2015)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% Original author:
+% Howard Wilson (https://github.com/watsonbox/cv_template_2004) with
+% extensive modifications by Vel (vel@latextemplates.com)
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[10pt]{article} % Default font size
+
+\input{structure.tex} % Include the file specifying document layout
+\usepackage[maxnames=4,minnames=4,sorting=ydnt]{biblatex}
+\addbibresource{publications.bib}
+
+%----------------------------------------------------------------------------------------
+
+\begin{document}
+
+%----------------------------------------------------------------------------------------
+%	NAME AND CONTACT INFORMATION
+%----------------------------------------------------------------------------------------
+
+\title{Federico Marotta -- Curriculum Vit\ae} % Print the main header
+
+%------------------------------------------------
+
+\parbox{0.5\textwidth}{ % First block
+\begin{tabbing} % Enables tabbing
+\hspace{3cm} \= \hspace{4cm} \= \kill % Spacing within the block
+{\bf Full Name} \> Federico Marotta \\
+{\bf Date of Birth} \> 20\textsuperscript{\textit{th}} January 1996 \\ % Date of birth 
+% {\bf Gender} \> Male \\
+{\bf Nationality} \> Italian % Nationality
+\end{tabbing}}
+\hfill % Horizontal space between the two blocks
+\parbox{0.5\textwidth}{ % Second block
+\begin{tabbing} % Enables tabbing
+\hspace{3cm} \= \hspace{4cm} \= \kill % Spacing within the block
+{\bf E-mail} \> \href{mailto:federico.marotta@edu.unito.it}{federico.marotta@edu.unito.it} \\
+{\bf Personal Website} \> \href{https://www.fmarotta.dynu.net}{https://www.fmarotta.dynu.net} \\
+% {\bf Web Page} \> \href{https://www.fmarotta.dynu.net}{https://www.fmarotta.dynu.net} \\
+% {\bf Mobile Phone} \> +0 (000) 111 1112 \\ % Mobile phone
+\end{tabbing}}
+
+
+%----------------------------------------------------------------------------------------
+%	EDUCATION SECTION
+%----------------------------------------------------------------------------------------
+
+\section{Education}
+
+\tabbedblock{
+\bf{2018-} \> M.Sc. Stochastics and Data Science -- \href{http://www.unito.it}{Università degli Studi di Torino} \\
+\> (Expected graduation date: April 2021) \\[5pt]
+\>\+
+\bullet Probability theory and stochastic processes \\
+\bullet Frequentist and Bayesian statistics \\
+\bullet Machine Learning
+}
+
+%------------------------------------------------
+
+\tabbedblock{
+\bf{2015-2018} \> B.Sc. Biotechnology (110/110L) -- \href{http://www.unito.it}{Università degli Studi di Torino} \\[5pt]
+\>\+
+\bullet Molecular and cellular biology \\
+\bullet Biochemistry and general chemistry \\
+\bullet Bioinformatics skills acquired during internship
+}
+
+%----------------------------------------------------------------------------------------
+%	EMPLOYMENT HISTORY SECTION
+%----------------------------------------------------------------------------------------
+
+\section{Work Experience}
+
+\job
+{Mar 2016-}{Present}
+{Computational Biology Unit (Prof. Paolo Provero's laboratory), Turin (Italy)}
+{https://proverolab.gitlab.io/}
+{Internship student}
+{
+\bullet Research in Bioinformatics \\
+\bullet Data Mining and Programming
+}
+
+\job
+{Mar 2020-}{Jun 2020}
+{Course of "Elements of physics, computer science and statistics", University of Turin (Italy)}
+{https://www.clproduzionianimali.unito.it/do/storicocorsi.pl/Show?_id=9489_1920}
+{Student tutor of computer science and statistics}
+{
+\bullet Clarification of the students' doubts \\
+\bullet Preparation of teaching material
+}
+
+\section{Research Activities}
+
+\paragraph{Master thesis research project}
+
+During my master's degree program I started working on a project with the goal of finding genes whose \textit{cis-}regulated expression is associated to a complex disease. This approach, commonly known as a transcriptome-wide association study, exploits a chain of associations: first from genetic variants to gene expression, and then from expression to disease. I wrote code to perform the prediction of gene expression from the DNA sequence, and then to associate the predicted expression to the disease status. The novelty of our approach is that the prediction is based on the affinities of transcription factors for the DNA sequence, rather than on the raw genotypes. I implemented an R package (\href{https://cran.r-project.org/web/packages/fplyr/index.html}{fplyr}) to help me performing these analyses.
+
+\paragraph{Previous activities} When I joined Prof. Provero's lab for my bachelor's thesis, I contributed to the existing research projects of the group, focused on the characterisation of SNP-disease association through the effect of the SNP on the affinity of the DNA sequence for transcription factors; I performed some basic computational analyses.
+
+\paragraph{Side projects} I developed an environment to automatically organise the data we download at our lab into appropriate folders, and to manage our research projects, enforcing good practices of workflow development, in a multi-user setting (\href{https://github.com/fmarotta/bioinfoconda}{https://github.com/fmarotta/bioinfoconda}).
+
+%----------------------------------------------------------------------------------------
+%	IT/COMPUTING SKILLS SECTION
+%----------------------------------------------------------------------------------------
+
+\section{Personal Skills and Competences}
+
+\skillgroup{Human Languages}
+{
+Italian (Mother tongue) \\
+English (C2)
+}
+
+\skillgroup{Computer Languages}
+{
+R, python, C, JavaScript
+}
+
+\skillgroup{\LaTeX}
+{
+I enjoy typesetting in \LaTeX\ and I am the author of a template for books or theses:\\
+\href{http://latextemplates.com/template/kaobook/}{http://latextemplates.com/template/kaobook}
+}
+
+%\skillgroup{Coding}
+%{
+%\textit{mySQL}
+%}
+
+%\skillgroup{Systems Administration}
+%{
+%\textit{GNU/Linux}
+%}
+
+
+%----------------------------------------------------------------------------------------
+%	INTERESTS SECTION
+%----------------------------------------------------------------------------------------
+
+%\section{Interests}
+
+%\interestsgroup{
+%\interest{Science}
+%\interest{Web Development}
+%\interest{Sports}
+%\interest{\LaTeX}
+%}
+
+%----------------------------------------------------------------------------------------
+
+\nocite{*}
+\printbibliography[title=Publications]
+
+\end{document}
