@@ -1,0 +1,232 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Wilson Resume/CV
+% XeLaTeX Template
+% Version 1.0 (22/1/2015)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% Original author:
+% Howard Wilson (https://github.com/watsonbox/cv_template_2004) with
+% extensive modifications by Vel (vel@latextemplates.com)
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[10pt]{article} % Default font size
+
+\input{structure.tex} % Include the file specifying document layout
+\usepackage[maxnames=4,minnames=4,sorting=ydnt]{biblatex}
+\addbibresource{publications.bib}
+
+%----------------------------------------------------------------------------------------
+
+\begin{document}
+
+%----------------------------------------------------------------------------------------
+%	NAME AND CONTACT INFORMATION
+%----------------------------------------------------------------------------------------
+
+\title{Federico Marotta, PhD Candidate} % Print the main header
+
+%------------------------------------------------
+
+\parbox{0.5\textwidth}{ % First block
+\begin{tabbing} % Enables tabbing
+\hspace{3cm} \= \hspace{4cm} \= \kill % Spacing within the block
+{\bf Full Name} \> Federico Marotta \\
+{\bf Date of Birth} \> 20\textsuperscript{\textit{th}} January 1996 \\ % Date of birth 
+{\bf Nationality} \> Italian \\ % Nationality
+{\bf Address} \> Karlsruher Strasse 9,\\\phantom{\bf Address} \> Heidelberg, DE 69126 \\
+\end{tabbing}}
+\hfill % Horizontal space between the two blocks
+\parbox{0.5\textwidth}{ % Second block
+\begin{tabbing} % Enables tabbing
+\hspace{3cm} \= \hspace{4cm} \= \kill % Spacing within the block
+{\bf E-mail} \> \href{mailto:fmarotta@proton.me}{fmarotta@proton.me} \\
+{\bf Phone} \> +49 162 583 4769 \\
+{\bf Personal Website} \> \href{https://www.fmarotta.net}{https://www.fmarotta.net} \\
+{\bf Social Media} \> GitHub, ORCiD, LinkedIn \\
+\end{tabbing}}
+
+%----------------------------------------------------------------------------------------
+%	PROFILE SECTION
+%----------------------------------------------------------------------------------------
+
+\section{Profile}
+
+Bioinformatician with formal education in Applied Mathematics and 7 years of international academic research experience at the intersection of biology, mathematics, and computer science. Strong foundation in bioinformatics, human genetics, and mathematical modelling. Formal experience with DNA/RNA sequencing, design of data analysis workflows, and scientific software development in R, Python, and Julia. Passionate about developing automations and leveraging technology to streamline complex processes both in and out of the workplace. Personal quote: “What I cannot code, I do not understand.”
+
+%----------------------------------------------------------------------------------------
+%	EDUCATION SECTION
+%----------------------------------------------------------------------------------------
+
+\section{Education}
+
+\tabbedblock{
+\bf{2021-} \> PhD candidate in Bioinformatics\\
+\bf{2025} \> \textit{Joint degree European Molecular Biology Laboratory and Heidelberg University, Germany}\\
+\>\+
+\textbf{Dissertation:} Characterization, evolution, and dynamics of cryoET-derived macromolecular assemblies in \textit{Mycoplasma pneumoniae}\\
+\textbf{Supervisor and mentor:} Prof. Peer Bork, Prof. Sophia Rudorf\\
+}
+
+\tabbedblock{
+\bf{2018-} \> M.Sc. in Stochastics and Data Science (Applied Mathematics)\\
+\bf{2021} \> \textit{University of Turin, Italy}\\
+\>\+
+\textbf{Dissertation:} The effect of genetic variants on complex diseases\\
+\textbf{Grade:} 110/110 cum laude\\
+\textbf{Supervisors:} Prof. Paolo Provero, Prof. Silvia Montagna\\
+}
+
+\tabbedblock{
+\bf{2015-} \> B.Sc. in Biotechnology\\
+\bf{2018} \> \textit{University of Turin, Italy}\\
+\>\+
+\textbf{Dissertation:} Transcriptome-wide association studies\\
+\textbf{Grade:} 110/110 cum laude\\
+\textbf{Supervisors:} Prof. Paolo Provero\\
+}
+
+%----------------------------------------------------------------------------------------
+%	WORK EXPERIENCE SECTION
+%----------------------------------------------------------------------------------------
+
+\section{Work Experience}
+
+\job
+{2021-}{Present}
+{PhD candidate | Computational biology and Mathematical Modelling}
+{https://embl.org}
+{European Molecular Biology Laboratory, Molecular and Systems Biology Unit, Germany}
+{
+\bullet Performed bioinformatic analyses to identify the function of previously uncharacterized proteins in a clinically relevant bacterium\\
+\bullet Designed a mathematical model of a biological process, developed an optimization algorithm, and implemented it in high-quality software\\
+\bullet Built workflows with Nextflow and Snakemake for large-scale processing of DNA sequence and protein structure data
+}
+
+\job
+{May 2018-}{Apr 2021}
+{Graduate researcher | Human Genetics}
+{https://unito.it}
+{University of Turin, Italy}
+{
+\bullet Processed DNA and RNA sequencing data, studying the effect of genetic variants \\
+\bullet Developed a predictive machine learning model based on DNA sequence \\
+\bullet Devised novel statistical methods to find associations between genes and disease 
+}
+
+\job
+{Mar 2020-}{Jul 2020}
+{Teaching Assistant | Introduction to Physics and Statistics}
+{University of Turin, Italy}
+{}
+{
+\bullet Developed training material, including homework and explanatory visualizations \\
+\bullet Provided support to students by addressing questions and clarifying concepts
+}
+
+%----------------------------------------------------------------------------------------
+%	TECHNICAL SKILLS SECTION
+%----------------------------------------------------------------------------------------
+
+\section{Technical Skills}
+
+\skillgroup{Programming and Software Development}
+{
+R—data.table, ggplot, shiny, machine learning, 3 own packages on CRAN (8 years) \\
+Python—data structures and algorithms, multi-threading (6 years) \\
+Julia—numerical computing, optimization (3 years)\\
+Pipeline development—Nextflow, Snakemake\\
+Databases—mongoDB, PostgreSQL \\
+NGS data analysis—variant calling, variant imputation \\
+Best practices—version control, Gitlab CI/CD, documentation and reports
+}
+
+\skillgroup{Mathematics and Statistics}
+{
+Hypothesis testing and association studies \\
+Machine learning (supervised and unsupervised) \\
+Mathematical modelling and stochastic processes
+}
+
+\skillgroup{Linux and High-performance Computing}
+{
+Proficient in Linux and HPC environments—slurm \\
+Bioinformatic tools—hmmer, BLAST, Foldseek
+}
+
+%----------------------------------------------------------------------------------------
+%	AWARDS SECTION
+%----------------------------------------------------------------------------------------
+
+\section{Awards}
+
+\tabbedblock{
+\bf{PEGS DREAM Challenge, 2nd place} \> \emph{Oct 2024} \\ 
+\>\+
+\bullet Won 2nd place in a crowd-sourced ML challenge (team of 2) to identify high-cholesterol risk factors using multimodal data
+}
+
+%----------------------------------------------------------------------------------------
+%	INTERNATIONAL CONFERENCES SECTION
+%----------------------------------------------------------------------------------------
+
+\section{International Conferences}
+
+\begin{itemize}
+	\item \textbf{RECOMB/ISCB Conference on Regulatory \& Systems} - 2024, Madison, Wisconsin (invited talk)
+	\item \textbf{Emerging Theoretical Approaches to Complement Single-Particle Cryo-Electron Microscopy} – 2024, Trieste, Italy (poster)
+	\item \textbf{DPG Spring Meeting}, working group on biological physics – 2025, Regensburg, Germany (oral presentation)
+\end{itemize}
+
+%----------------------------------------------------------------------------------------
+%	OTHER RELEVANT EXPERIENCE SECTION
+%----------------------------------------------------------------------------------------
+
+\section{Other Relevant Experience}
+
+\paragraph{Side projects} Self-host a personal website and various services—including a custom-built home automation system—on a Raspberry Pi.
+
+\paragraph{Teaching} Instructed 4 courses on R programming, Python programming, and developer environment setup. Regular contributor and speaker in the local R and Python programming club events.
+
+\paragraph{Event organization} Co-organized the bi-weekly meetings of the local EMBL R programming club since Jan 2024. Organized team-building retreat in 2022, including scientific program and social activities.
+
+%----------------------------------------------------------------------------------------
+%	PROFESSIONAL DEVELOPMENT SECTION
+%----------------------------------------------------------------------------------------
+
+\section{Professional Development}
+
+\begin{itemize}
+	\item Communication skills (2025)
+	\item Managing difficult conversations (2024)
+	\item MBTI personality types (2022)
+\end{itemize}
+
+%----------------------------------------------------------------------------------------
+%	LANGUAGES SECTION
+%----------------------------------------------------------------------------------------
+
+\section{Languages}
+
+\begin{itemize}
+	\item Italian (Mother tongue)
+	\item English (C2, professional working proficiency)
+	\item German (A1)
+	\item Chinese (A1)
+\end{itemize}
+
+%----------------------------------------------------------------------------------------
+
+\nocite{*}
+\printbibliography[title=Publications]
+
+\end{document}
