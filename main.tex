@@ -1,0 +1,188 @@
+\documentclass[
+	DIV=15,
+]{scrartcl}
+
+\usepackage{microtype}
+
+\usepackage{fontspec}
+\setmainfont{Fira Sans}
+\setsansfont{Fira Sans}
+
+\usepackage[english]{csquotes}
+
+\usepackage[hidelinks]{hyperref}
+
+\usepackage{fontawesome5}
+
+\usepackage{enumitem}
+\setlist{nosep}
+% \setlist[description]{labelindent=1.5em}
+% \addtokomafont{descriptionlabel}{\normalfont}
+\renewcommand{\labelitemi}{\raisebox{1.4pt}{\tiny ▶}}
+
+\usepackage{biblatex}
+\addbibresource{publications.bib}
+
+\usepackage{xcolor}
+\definecolor{gblue}{RGB}{18, 105, 199}
+\addtokomafont{title}{\color{gblue}}
+\addtokomafont{section}{\color{gblue}}
+\addtokomafont{subparagraph}{\normalfont\itshape}
+
+\RedeclareSectionCommand[beforeskip=1.5ex plus -.2ex, afterskip=.2ex plus -.2ex]{section}
+\RedeclareSectionCommand[beforeskip=0.2ex plus -.2ex, afterskip=.2ex plus -.2ex]{paragraph}
+\RedeclareSectionCommand[beforeskip=0.2ex plus -.2ex, afterskip=.2ex plus -.2ex, runin=false, indent=0pt]{subparagraph}
+
+\raggedbottom
+\pagestyle{empty}
+
+\begin{document}
+
+\begin{center}
+	{\usekomafont{title} \huge Federico Marotta, PhD Candidate}\\[10px]
+	\href{https://en.wikipedia.org/wiki/Turin}{\faIcon{pizza-slice} Born 1996 in Torino (Italy)}\\[4px]
+	\href{mailto:fmarotta@proton.me}{\faIcon{envelope} fmarotta@proton.me}
+	| \href{tel:+491625834769}{\faIcon{phone} +49 162 583 4769}\\[4px]
+	\href{https://github.com/fmarotta}{\faIcon{github} GitHub}
+	| \href{https://orcid.org/0000-0002-0174-3901}{\faIcon{orcid} ORCiD}
+	| \href{https://www.linkedin.com/in/federico-marotta-4a6b23137/}{\faIcon{linkedin} LinkedIn}
+	| \href{https://www.fmarotta.net}{\faIcon{code} Website}\\[4px]
+\end{center}
+
+\section*{Profile}
+
+\begin{itemize}
+	\item Bioinformatician with formal education in mathematics and 7 years of international academic research experience at the intersection of biology, mathematics, and computer science
+	\item Strong foundation in bioinformatics, human genetics, and mathematical modelling
+	\item Formal experience with DNA/RNA sequencing, design of data analysis workflows, and scientific software development in R, Python, and Julia
+	\item Passionate about developing automations and leveraging technology to streamline complex processes both in and out of the workplace
+	\item Personal quote: \enquote{What I cannot code, I do not understand}
+\end{itemize}
+
+\section*{Technical Skills}
+
+\paragraph{Software development}
+\begin{itemize}
+	\item R---data.table, ggplot, shiny, machine learning (8-year experience, 3 own packages on CRAN)
+	\item Python---data structures and algorithms, multi-threading (6-year experience)
+	\item Julia---numerical computing, optimization (3-year experience)
+	\item Pipeline development---Nextflow, Snakemake
+	\item Databases---mongoDB, PostgreSQL
+	\item NGS data analysis---variant calling, variant imputation
+	\item Best practices---version control, Gitlab CI/CD, documentation and reports
+\end{itemize}
+
+\paragraph{Mathematics and Statistics}
+\begin{itemize}
+	\item Hypothesis testing and association studies
+	\item Machine learning (supervised and unsupervised)
+	\item Mathematical modelling and stochastic processes
+\end{itemize}
+
+\paragraph{Linux and High-performance Computing}
+\begin{itemize}
+	\item Proficient in Linux and HPC environments---slurm
+	\item Bioinformatic tools---hmmer, BLAST, Foldseek
+\end{itemize}
+
+\paragraph{Domain knowledge}
+\begin{itemize}
+	\item Biology, statistics, bioinformatics, modelling, data analysis
+\end{itemize}
+
+\section*{Work Experience}
+
+\paragraph{PhD candidate | Bioinformatics and mathematical modelling | 2021 -- Present}
+\subparagraph{\href{https://embl.org/groups/bork}{European Molecular Biology Laboratory, Molecular and Systems Biology Unit, Germany}}
+\begin{itemize}
+	\item Performed bioinformatic analyses to identify the function of previously uncharacterized proteins in a clinically relevant bacterium
+	\item Designed a mathematical model of a biological process, developed an optimization algorithm, and implemented it in high-quality software
+	\item Built workflows with Nextflow and Snakemake for large-scale processing of DNA sequence and protein structure data
+\end{itemize}
+
+\paragraph{Graduate researcher | Human Genetics | 2017 -- 2021}
+\subparagraph{\href{https://unito.it}{University of Turin, Italy}}
+\begin{itemize}
+	\item Processed DNA and RNA sequencing data, studying the effect of genetic variants
+	\item Developed a predictive machine learning model based on DNA sequence
+	\item Devised novel statistical methods to find associations between genes and disease
+\end{itemize}
+
+\paragraph{Teaching Assistant | Introduction to Physics and Statistics | 2020}
+\subparagraph{\href{https://unito.it}{University of Turin, Italy}}
+\begin{itemize}
+	\item Developed training material, including homework and explanatory visualizations
+	\item Provided support to students by addressing questions and clarifying concepts
+\end{itemize}
+
+\section*{Education}
+
+\paragraph{PhD candidate in Bioinformatics}
+\subparagraph{\href{https://embl.org}{Joint degree European Molecular Biology Laboratory and Heidelberg University, Germany}}
+\begin{itemize}
+	\item Dissertation: Characterization, evolution, and dynamics of cryoET-derived macromolecular assemblies in \textit{Mycoplasma pneumoniae}
+	% \item[Supervisors and mentors:] Prof. Peer Bork, Dr. Julia Mahamid, Dr. Maria Zimmermann-Kogadeeva, Prof. Sophia Rudorf
+	\item Supervisor and mentor: Prof. Peer Bork, Prof. Sophia Rudorf
+\end{itemize}
+
+\paragraph{M.Sc. in Stochastics and Data Science (Applied Mathematics) | Grade 110/110 cum laude}
+\subparagraph{\href{https://unito.it}{University of Turin, Italy}}
+\begin{itemize}
+	\item Dissertation: The effect of genetic variants on complex diseases
+	% \item Grade: 110/110 cum laude
+	\item Supervisors: Prof. Paolo Provero, Prof. Silvia Montagna
+\end{itemize}
+
+\paragraph{B.Sc. in Biotechnology | Grade 110/110 cum laude}
+\subparagraph{\href{https://unito.it}{University of Turin, Italy}}
+\begin{itemize}
+	\item Dissertation: Transcriptome-wide association studies
+	% \item Grade: 110/110 cum laude
+	\item Supervisors: Prof. Paolo Provero
+\end{itemize}
+
+\section*{Awards}
+
+\paragraph{PEGS DREAM Challenge, 2nd place | 2024}
+\begin{itemize}
+	\item Won 2nd place in a crowd-sourced ML challenge (team of 2) to identify high-cholesterol risk factors using multimodal data
+	\item Gave a talk at the RECOMB/ISCB Conference on Regulatory \& Systems Genomics in Madison, Wisconsin (\href{https://www.youtube.com/watch?v=QCDiowWxeJM}{YouTube video})
+\end{itemize}
+
+\section*{Selected Publications and International Conferences}
+
+\begin{itemize}
+	% \item \textbf{RECOMB/ISCB Conference on Regulatory \& Systems Genomics} --- 2024, Madison, Wisconsin (invited talk)
+	\item \citetitle{zhao2024thanos} (journal article + R package)
+	\item \citetitle{marotta2020fplyr} (preprint + R package)
+	\item \citetitle{jensen2025cell} (preprint)
+	\item \citetitle{marotta2021prediction} (preprint + code)
+	% \item \enquote{Emerging Theoretical Approaches to Complement Single-Particle Cryo-Electron Microscopy} – 2024, Trieste, Italy (conference poster)
+	\item \enquote{DPG Spring Meeting}, working group on biological physics --- 2025, Regensburg, Germany (oral presentation)
+\end{itemize}
+
+\section*{Relevant Experience}
+
+\paragraph{Side projects}
+\begin{itemize}
+	\item Self-host a personal website and various services---including a custom-built home automation system---on a Raspberry Pi
+	\item Experienced LaTeX user, I designed a widely used book template with over 900 stars on Github
+\end{itemize}
+
+\paragraph{Teaching and Event organization}
+\begin{itemize}
+	\item Instructed 4 courses on R programming, Python programming, and developer environment setup
+	\item Regular contributor and speaker in the local R and Python programming club events
+	\item Co-organized the bi-weekly meetings of the local EMBL R programming club since Jan 2024
+\end{itemize}
+
+ % Organized team-building retreat in 2022, including scientific program and social activities.
+
+\section*{Personal and Professional Development}
+
+\begin{itemize}
+	\item Attended courses on \enquote{Communication skills} (2025), \enquote{Managing difficult conversations} (2024), \enquote{MBTI personality types} (2022), and \enquote{Assert yourself} (2022)
+	\item Besides programming languages, I dabble in some human languages including Italian (native), English (professional), German (A1), and Chinese (A1)
+\end{itemize}
+
+\end{document}
