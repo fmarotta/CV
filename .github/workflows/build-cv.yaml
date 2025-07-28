@@ -18,12 +18,14 @@ jobs:
         uses: xu-cheng/latex-action@v2
         with:
           root_file: main.tex # Specifies the main LaTeX file to compile
+          # Added latexmk_options to use lualatex with shell-escape and nonstopmode and ignore the local .latexmkrc
+          latexmk_options: '-norc -pdflatex="lualatex -shell-escape -interaction=nonstopmode %O %S"'
 
       - name: Upload CV PDF as Artifact # Step 3: Upload the compiled PDF as a temporary artifact
         uses: actions/upload-artifact@v4
         with:
           name: compiled-cv # Name of the artifact
-          path: /tmp/latexmk-github-workspace/main.pdf # Path to the compiled PDF file (output of latex-action)
+          path: main.pdf # Path to the compiled PDF file (output of latex-action)
 
       - name: Get Branch Name and Date for Release Tag # Step 4: Dynamically generate the release tag
         id: generate_release_tag
@@ -47,7 +49,7 @@ jobs:
             Date: ${{ steps.generate_release_tag.outputs.tag }}
           draft: false # Set to true if you want to create a draft release first
           prerelease: false # Set to true for pre-release versions
-          files: /tmp/latexmk-github-workspace/main.pdf # Attach the compiled PDF file to the release
+          files: main.pdf # Attach the compiled PDF file to the release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # Required for creating releases
 
