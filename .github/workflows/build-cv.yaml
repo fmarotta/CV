@@ -1,0 +1,55 @@
+name: Build CV and Create Release
+
+on:
+  # This workflow will now run whenever a push occurs on ANY branch.
+  push:
+    branches:
+      - '**' # Triggers on pushes to any branch
+
+jobs:
+  build_and_release_cv:
+    runs-on: ubuntu-latest # Specifies the operating system for the job
+
+    steps:
+      - name: Checkout repository # Step 1: Clone your repository's code
+        uses: actions/checkout@v4
+
+      - name: Compile LaTeX CV # Step 2: Compile the main.tex file into a PDF
+        uses: xu-cheng/latex-action@v2
+        with:
+          root_file: main.tex # Specifies the main LaTeX file to compile
+          # Added latexmk_options to use lualatex with shell-escape and nonstopmode
+          latexmk_options: '-pdflatex="lualatex -shell-escape -interaction=nonstopmode %O %S"'
+
+      - name: Upload CV PDF as Artifact # Step 3: Upload the compiled PDF as a temporary artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: compiled-cv # Name of the artifact
+          path: main.pdf # Path to the compiled PDF file (output of latex-action)
+
+      - name: Get Branch Name and Date for Release Tag # Step 4: Dynamically generate the release tag
+        id: generate_release_tag
+        run: |
+          # Get the current branch name and sanitize it for use in a tag
+          BRANCH_NAME=$(echo "${{ github.ref_name }}" | sed 's/[^a-zA-Z0-9-]/-/g')
+          # Get the current date in YYYY-MM-DD format
+          CURRENT_DATE=$(date +%Y-%m-%d)
+          # Combine them to form the release tag
+          RELEASE_TAG="${BRANCH_NAME}-${CURRENT_DATE}"
+          # Set the output variable 'tag' for subsequent steps
+          echo "tag=${RELEASE_TAG}" >> $GITHUB_OUTPUT
+
+      - name: Create GitHub Release # Step 5: Create a new GitHub Release
+        uses: softprops/action-gh-release@v1
+        with:
+          tag_name: ${{ steps.generate_release_tag.outputs.tag }} # Use the dynamically generated tag
+          name: CV Release - ${{ steps.generate_release_tag.outputs.tag }} # Name for the release
+          body: | # Description for the release
+            This release contains the compiled PDF of my CV from the ${{ github.ref_name }} branch.
+            Date: ${{ steps.generate_release_tag.outputs.tag }}
+          draft: false # Set to true if you want to create a draft release first
+          prerelease: false # Set to true for pre-release versions
+          files: main.pdf # Attach the compiled PDF file to the release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # Required for creating releases
+
